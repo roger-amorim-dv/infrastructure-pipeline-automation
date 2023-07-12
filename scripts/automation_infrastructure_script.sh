@@ -15,7 +15,7 @@ fi
 cat > terraform/services/${APPLICATION_NAME}.tf <<EOF
 resource "aws_lambda_function" "${APPLICATION_NAME}" {
   function_name = "\${var.project}-${APPLICATION_NAME}"
-  role          = aws_iam_role.application_name.arn
+  role          = aws_iam_role.${APPLICATION_NAME}.arn
   handler       = "index.handler"
   runtime       = "${LAMBDA_RUNTIME}"
   timeout       = ${LAMBDA_TIMEOUT}

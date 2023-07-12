@@ -1,0 +1,15 @@
+name: Terraform (Lint)
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: hashicorp/setup-terraform@v1
+      - name: Terraform Lint
+        run: terraform fmt -check -recursive
