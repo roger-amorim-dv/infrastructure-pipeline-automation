@@ -50,14 +50,14 @@ git push --set-upstream origin feature/${APPLICATION_NAME}
 
 # Create the pull request
 curl -X POST \
-  -H "Authorization: Bearer ${{ secrets.GITHUB_SECRET }}" \
+  -H "Authorization: Bearer $SECRET" \
   -H "Content-Type: application/json" \
   -d "{
     \"title\": \"Create Lambda Function for ${APPLICATION_NAME}\",
-    \"body\": \"This pull request creates the Lambda function for ${APPLICATION_NAME}.\",
-    \"head\": \"pr-branch\",
+    \"body\": \"This pull request created the Lambda function for ${APPLICATION_NAME}.\",
+    \"head\": \"feature/${APPLICATION_NAME}\",
     \"base\": \"main\",
     \"maintainer_can_modify\": true,
-    \"draft\": false
+    \"draft\": true
   }" \
-  "https://api.github.com/repos/${{ github.repository }}/pulls"
+  "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls"
