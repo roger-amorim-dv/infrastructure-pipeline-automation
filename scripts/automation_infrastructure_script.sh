@@ -7,7 +7,7 @@ resource "aws_lambda_function" "${APPLICATION_NAME}" {
   function_name = "\${var.project}-${APPLICATION_NAME}"
   role          = aws_iam_role.application_name.arn
   handler       = "index.handler"
-  runtime       = ${LAMBDA_RUNTIME}
+  runtime       = "${LAMBDA_RUNTIME}"
   timeout       = ${LAMBDA_TIMEOUT}
 
   lifecycle {
@@ -16,7 +16,7 @@ resource "aws_lambda_function" "${APPLICATION_NAME}" {
 }
 
 resource "aws_iam_role" "${APPLICATION_NAME}" {
-  name = "${APPLICATION_NAME}-role"
+  name = replace("${APPLICATION_NAME}-role", "-", "_")
 
   assume_role_policy = <<EOF
   {
@@ -58,6 +58,6 @@ curl -X POST \
     \"head\": \"feature/${APPLICATION_NAME}\",
     \"base\": \"main\",
     \"maintainer_can_modify\": true,
-    \"draft\": true
+    \"draft\": false
   }" \
   "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls"
