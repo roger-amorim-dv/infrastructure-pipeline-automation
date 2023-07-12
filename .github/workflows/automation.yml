@@ -22,5 +22,4 @@ jobs:
 
       - name: Execute shell script
         run: |
-          chmod +x automation_script.sh
-          ./scripts/automation_script.sh
+          chmod +x ./scripts/automation_script.sh && ./scripts/automation_script.sh
