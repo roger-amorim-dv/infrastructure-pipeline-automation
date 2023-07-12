@@ -1,0 +1,24 @@
+name: Parameterized Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment'
+        required: true
+        default: 'dev'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Build and deploy
+        run: |
+          echo "Building and deploying for ${{ github.event.inputs.environment }}"
+
+      - name: Execujte shell script
+        run: ./scripts/automation_script.sh
