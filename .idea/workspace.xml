@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e2f72b9f-aaea-4185-9cdf-fcca2a28da35" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.github/workflows/automation.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/automation.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/automation_script.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/automation_script.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

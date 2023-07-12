@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Hello world from shelL!"
+echo "Hello world from shell!"

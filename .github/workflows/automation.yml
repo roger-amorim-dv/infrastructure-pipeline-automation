@@ -1,12 +1,16 @@
-name: Parameterized Workflow
+name: Infrastructure Automation Workflow
 
 on:
   workflow_dispatch:
     inputs:
       environment:
-        description: 'Environment'
+        description: 'Application Name'
         required: true
-        default: 'dev'
+        default: 'Ex: my_application_name'
+      event_rule_expression:
+        description: 'Event Rule Expression'
+        required: true
+        default: 'Ex: rate(10 minutes)'
 
 jobs:
   build:
@@ -19,6 +23,7 @@ jobs:
       - name: Build and deploy
         run: |
           echo "Building and deploying for ${{ github.event.inputs.environment }}"
+          echo "Building and deploying for ${{ github.event.inputs.event_rule_expression }}"
 
       - name: Execute shell script
         run: |
