@@ -1,0 +1,33 @@
+name: Infrastructure Automation Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      application_name:
+        description: 'Application Name'
+        required: true
+        default: 'Ex: my_application_name'
+      lambda_timeout:
+        description: 'Lambda Timeout'
+        required: true
+        default: 'Ex: 60 - Obs: This value should be passed as an integer'
+      lambda_runtime:
+        description: 'Lambda Runtime'
+        required: true
+        default: 'Ex: nodejs16.x - Obs: This value should be passed as a string'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create Pull Request
+        env:
+          APPLICATION_NAME: ${{ github.event.inputs.application_name }}
+          LAMBDA_TIMEOUT: ${{ github.event.inputs.lambda_timeout }}
+          LAMBDA_RUNTIME: ${{ github.event.inputs.lambda_runtime }}
+        run: |
+          chmod +x ./scripts/automation_infrastructure_script.sh && ./scripts/automation_infrastructure_script.sh
