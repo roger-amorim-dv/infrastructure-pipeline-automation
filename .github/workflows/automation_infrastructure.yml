@@ -29,5 +29,6 @@ jobs:
           APPLICATION_NAME: ${{ github.event.inputs.application_name }}
           LAMBDA_TIMEOUT: ${{ github.event.inputs.lambda_timeout }}
           LAMBDA_RUNTIME: ${{ github.event.inputs.lambda_runtime }}
+          SECRET: ${{ secrets.SECRET }}
         run: |
           chmod +x ./scripts/automation_infrastructure_script.sh && ./scripts/automation_infrastructure_script.sh
