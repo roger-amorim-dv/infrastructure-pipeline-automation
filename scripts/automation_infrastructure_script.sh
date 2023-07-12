@@ -45,8 +45,8 @@ git add terraform/services/${APPLICATION_NAME}.tf
 git commit -m "Chore: Add Terraform file for ${APPLICATION_NAME}"
 
 # Push the changes to a new branch
-git branch pr-branch
-git push --set-upstream origin pr-branch
+git branch feature/${APPLICATION_NAME}
+git push --set-upstream origin feature/${APPLICATION_NAME}
 
 # Create the pull request
 curl -X POST \
