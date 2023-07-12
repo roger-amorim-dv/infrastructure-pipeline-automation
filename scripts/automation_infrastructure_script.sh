@@ -1,6 +1,3 @@
-# Create a new branch from main
-#git checkout -b feature/${APPLICATION_NAME}
-
 # Create the Terraform file
 cat > terraform/services/${APPLICATION_NAME}.tf <<EOF
 resource "aws_lambda_function" "${APPLICATION_NAME}" {
@@ -16,7 +13,7 @@ resource "aws_lambda_function" "${APPLICATION_NAME}" {
 }
 
 resource "aws_iam_role" "${APPLICATION_NAME}" {
-  name = replace("${APPLICATION_NAME}-role", "-", "_")
+  name = "${APPLICATION_NAME}-role"
 
   assume_role_policy = <<EOF
   {
@@ -50,7 +47,7 @@ git push --set-upstream origin feature/${APPLICATION_NAME}
 
 # Create the pull request
 curl -X POST \
-  -H "Authorization: Bearer ${{ secrets.SECRET }}" \
+  -H "Authorization: Bearer $SECRET" \
   -H "Content-Type: application/json" \
   -d "{
     \"title\": \"Create Lambda Function for ${APPLICATION_NAME}\",
@@ -60,4 +57,4 @@ curl -X POST \
     \"maintainer_can_modify\": true,
     \"draft\": false
   }" \
-  "https://api.github.com/repos/${{ github.repository }}/pulls"
+  "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls"
