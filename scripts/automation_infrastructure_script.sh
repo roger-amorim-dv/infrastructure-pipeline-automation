@@ -1,5 +1,15 @@
-# Create a new branch from main
-git checkout -b feature/${APPLICATION_NAME}
+# Check if the branch already exists
+branch_exists=$(git ls-remote --heads origin feature/${APPLICATION_NAME})
+
+if [[ -z "$branch_exists" ]]; then
+  echo "Branch feature/${APPLICATION_NAME} does not exist. Creating a new branch..."
+  # Create a new branch from main
+  git checkout -b feature/${APPLICATION_NAME}
+else
+  echo "Branch feature/${APPLICATION_NAME} already exists. Switching to the existing branch..."
+  # Switch to the existing branch
+  git checkout feature/${APPLICATION_NAME}
+fi
 
 # Create the Terraform file
 cat > terraform/services/${APPLICATION_NAME}.tf <<EOF
