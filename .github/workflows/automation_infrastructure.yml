@@ -1,0 +1,29 @@
+name: Infrastructure Automation Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      application_name:
+        description: 'Application Name'
+        required: true
+        default: 'Ex: my_application_name'
+      event_rule_expression:
+        description: 'Event Rule Expression'
+        required: true
+        default: 'Ex: rate(10 minutes)'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create Pull Request
+        env:
+          APPLICATION_NAME: ${{ github.event.inputs.application_name }}
+          EVENT_RULE_EXPRESSION: ${{ github.event.inputs.event_rule_expression }}
+        run: |
+          chmod +x ./scripts/automation_infrastructure_script.sh && ./scripts/automation_infrastructure_script.sh
+          
