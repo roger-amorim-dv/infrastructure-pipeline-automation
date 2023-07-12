@@ -20,5 +20,7 @@ jobs:
         run: |
           echo "Building and deploying for ${{ github.event.inputs.environment }}"
 
-      - name: Execujte shell script
-        run: ./scripts/automation_script.sh
+      - name: Execute shell script
+        run: |
+          chmod +x automation_script.sh
+          ./scripts/automation_script.sh
