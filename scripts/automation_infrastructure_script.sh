@@ -1,5 +1,5 @@
 # Create a new branch from main
-git checkout -b feature/${APPLICATION_NAME}
+#git checkout -b feature/${APPLICATION_NAME}
 
 # Create the Terraform file
 cat > terraform/services/${APPLICATION_NAME}.tf <<EOF
