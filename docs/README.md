@@ -34,7 +34,7 @@ Once you have set up the Infrastructure Pipeline Automation project, you can uti
 
 
 2. **Error Reduction:** Manual steps in infrastructure pipeline deployment often introduce the risk of human error. By relying on this automated solution, you minimize the chances of mistakes and improve the overall reliability of your infrastructure setup.
-   <img alt="Image Caption" height="314" src="images/pipeline-parameters-filled.png" width="323"/>
+![Image Caption](images/pipeline-parameters-filled.png)
 
 
 3. **Simplified Management:** As your infrastructure requirements evolve, the automation code can be easily adjusted. With the provided configuration options, you can adapt the code to accommodate changes, making management and maintenance of the pipelines straightforward.
