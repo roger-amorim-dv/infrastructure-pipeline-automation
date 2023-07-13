@@ -33,20 +33,20 @@ Once you have set up the Infrastructure Pipeline Automation project, you can uti
 1. **Streamlined Deployment:** With automation in place, you can quickly and reliably deploy infrastructure pipelines. Simply provide the necessary parameters, and the code will handle the rest, ensuring a consistent and efficient deployment process.
 
 
-2. **Error Reduction:** Manual steps in infrastructure pipeline deployment often introduce the risk of human error. By relying on this automated solution, you minimize the chances of mistakes and improve the overall reliability of your infrastructure setup.
-![Image Caption](images/pipeline-parameters-filled.png)
+2. **Error Reduction:** Manual steps in infrastructure pipeline deployment often introduce the risk of human error. By relying on this automated solution, you minimize the chances of mistakes and improve the overall reliability.
+   ![Image Caption](images/pipeline-parameters-filled.png)
 
 
 3. **Simplified Management:** As your infrastructure requirements evolve, the automation code can be easily adjusted. With the provided configuration options, you can adapt the code to accommodate changes, making management and maintenance of the pipelines straightforward.
 
 
 4. **Scalability and Flexibility:** The project is designed to handle various pipeline configurations. Whether you need a simple single-environment setup or a complex multi-environment architecture, the code can be extended and customized to suit your needs.
-![Image Caption](images/pull-request-created.png)
-![Image Caption](images/pull-request-entirely.png)
+   ![Image Caption](images/pull-request-created.png)
+   ![Image Caption](images/pull-request-entirely.png)
 
 
 5. **Result:** The project result is a pull request created, with the necessary code to do something that you need and often.
-![Image Caption](images/terraform-code-gerated.png)
+   ![Image Caption](images/terraform-code-gerated.png)
 
 ## Contributing
 
