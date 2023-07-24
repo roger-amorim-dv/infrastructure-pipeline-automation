@@ -44,6 +44,18 @@ resource "aws_iam_role" "${APPLICATION_NAME}_test" {
   }
   EOF
 }
+
+data "aws_iam_policy_document" "${APPLICATION_NAME}_policy_document" {
+  statement {
+    actions = [
+      "ec2:CreateNetworkInterface",
+      "ec2:DescribeNetworkInterfaces",
+      "ec2:DeleteNetworkInterface",
+      "ec2:DetachNetworkInterface",
+    ]
+    resources = ["*"]
+  }
+}
 EOF
 
 # Configure git
