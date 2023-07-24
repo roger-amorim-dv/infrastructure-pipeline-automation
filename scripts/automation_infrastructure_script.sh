@@ -25,7 +25,7 @@ resource "aws_lambda_function" "${APPLICATION_NAME}" {
   }
 }
 
-resource "aws_iam_role" "${APPLICATION_NAME}" {
+resource "aws_iam_role" "${APPLICATION_NAME}_test" {
   name = "${APPLICATION_NAME}-role"
 
   assume_role_policy = <<EOF
